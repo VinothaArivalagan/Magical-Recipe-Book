@@ -1,15 +1,14 @@
 import ListItem from './ListItem';
 
-function List({ data }) {
-  const handleDelete = (id) => {
-    console.log(`Item with ID ${id} deleted`);
-  };
 
+
+function List({ data, onDelete }) {
   return (
     <ul>
-      {data.map(item => (
-        <ListItem key={item.id} item={item} onDelete={handleDelete} />
-      ))}
+      {data.map(item =>{ 
+        console.log(item);
+       return  <ListItem key={item.id} item={item} onDelete={onDelete} />
+    })}
     </ul>
   );
 }

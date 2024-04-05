@@ -4,7 +4,7 @@ function Navbar() {
     <nav className="navbar">
       <img id ="" src="" />
       <div>
-        <h1>App Name</h1>
+        <h1>Magical Recipes</h1>
 
       </div>
     </nav>

@@ -1,5 +1,5 @@
 // App.js
-import recipes from './recipes.json'
+import data from './recipes.json'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -12,23 +12,24 @@ import DashboardPage from './pages/DashboardPage';
 import ItemDetailsPage from './pages/ItemDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css'; 
+import { useState } from 'react';
 
 function App() {
+  const [recipes,  setRecipes] = useState(data);
   return (
     <Router>
       <div className="app">
         <Navbar />
         <Sidebar />
-        <List data={recipes} />
         <div className="content">
           <Routes>
-            <Route exact path="/" component={<Home/>} />
-            <Route path="/about" component={<About/>} />
-            <Route exact path="/" component={<DashboardPage/>} />
-            <Route path="/item/:id" component={<ItemDetailsPage/>} />
-            <Route path="/about" component={<About/>} />
-            <Route component={<NotFoundPage/>} />
-            </Routes>
+            <Route exact path="/" element={<Home data ={recipes}/>} />
+            <Route path="/about" element={<About/>} />
+            <Route exact path="/" element={<DashboardPage/>} />
+            <Route path="/item/:id" element={<ItemDetailsPage/>} />
+
+            <Route path="*" element={<NotFoundPage/>} />
+          </Routes>
         </div>
 
         <Footer />
