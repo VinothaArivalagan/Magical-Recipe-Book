@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import List from './components/List';
-import ListItem from './components/ListItem';
 import DashboardPage from './pages/DashboardPage';
 import ItemDetailsPage from './pages/ItemDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
