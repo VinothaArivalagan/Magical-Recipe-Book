@@ -6,7 +6,6 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import List from './components/List';
 import DashboardPage from './pages/DashboardPage';
 import ItemDetailsPage from './pages/ItemDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -22,11 +21,10 @@ function App() {
         <Sidebar />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<Home data ={recipes}/>} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
-            <Route exact path="/" element={<DashboardPage/>} />
-            <Route path="/item/:id" element={<ItemDetailsPage/>} />
-
+            <Route exact path="/dashboard" element={<DashboardPage data ={recipes}/>} />
+            <Route path="/itemdetails" element={<ItemDetailsPage data = {recipes}/>} />
             <Route path="*" element={<NotFoundPage/>} />
           </Routes>
         </div>

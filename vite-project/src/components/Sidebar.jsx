@@ -1,8 +1,4 @@
 import { Link } from 'react-router-dom';
-import Home from '../pages/Home';
-import About from '../pages/About';
-
-
 
 
 function Sidebar() {
@@ -10,10 +6,15 @@ function Sidebar() {
     <aside className="sidebar">
       <ul>
         <li>
-          <Link to="/">Home</Link>
-        </li>
+        <Link to="/"> Home </Link>  </li>
+        <li>        
+        <Link to="/about"> About </Link>  </li>    
         <li>
-          <Link to="/about">About</Link>
+        <Link to="/dashboard"> DashBoard </Link> </li>
+        <li>
+        <Link to="/itemdetails"> Item Details</Link> </li>
+        <li>
+        <Link to="/notfound">  </Link> 
         </li>
       </ul>
     </aside>

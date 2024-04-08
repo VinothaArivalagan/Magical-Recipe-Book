@@ -1,20 +1,28 @@
-import { useParams } from 'react-router-dom';
+import List from "../components/List";
+import { Link } from "react-router-dom";
+import classes from "../components/styling/List.module.css";
 
-function ItemDetailsPage() {
-  const { id } = useParams();
 
-  // Fetch item details based on the id
-  const itemDetails = {}; // Your item details data
-
+function ItemDetailsPage(props) {
+ 
   return (
     <div>
-      <h2>Item Details</h2>
-      <p>ID: {id}</p>
-      <p>Item Name: {itemDetails.name}</p>
-      <p>Item Description: {itemDetails.description}</p>
-      {/* Other item details */}
+      <h1>Details</h1>
+      {props.data.map((List) => {
+        return (
+          <Link key={List.id} className="List" to = {`/item/${List.id}`}>
+            <img src={List.image} className={classes.img}/>
+            <h3>{List.name}</h3>
+            <p>{List.calories}</p>
+            <p>{List.servings}</p>
+            
+          </Link>
+        );
+      })}
     </div>
   );
 }
+
+
 
 export default ItemDetailsPage;

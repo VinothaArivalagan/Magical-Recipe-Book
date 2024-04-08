@@ -9,3 +9,11 @@
   .img{
     width: 200px;
   }
+  .logo{
+    display: block;
+  margin-left: 500px;
+  margin-right: 200px;
+  }
+  .Navbar{
+    text-align: center;
+  }

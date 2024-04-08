@@ -1,12 +1,17 @@
+import { Link } from 'react-router-dom';
 import List from '../components/List';
 
-function DashboardPage() {
-  // Fetch or pass data to the List component
-  const data = []; // Your items data
+function DashboardPage(props) {
   return (
     <div>
-      <h2>Dashboard</h2>
-      <List data={data} />
+      <h1>DashBoard</h1>
+      {props.data.map((List) => {
+        return (
+          <Link key={List.id} className="List" to = {`/item/${List.id}`}>
+            <h3>{List.name}</h3>
+          </Link>
+        );
+      })}
     </div>
   );
 }
