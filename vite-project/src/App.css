@@ -1,26 +1,32 @@
 .navbar {
-  background-color: #333;
+  background-color: #582406;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  text-align: center;
+}
+
+.background-color {
+  background-color: beige;
 }
 
 .navbar-logo {
-  background-image: url(./);
+  background-image: url(./assets/images/CELSO&VINOTHA.gif);
   font-size: 1.5rem;
+  
 }
 
 .footer {
-  background-color: #333;
+  background-color: #d29722;
   color: #fff;
   padding: 1rem;
   text-align: center;
 }
 
 .sidebar {
-  background-color: darkgoldenrod;
+  background-color: rgba(196, 151, 38, 0.493);
   width: 1500px;
 
 }
