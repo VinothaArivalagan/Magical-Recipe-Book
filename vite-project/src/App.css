@@ -8,6 +8,7 @@
 }
 
 .navbar-logo {
+  background-image: url(./);
   font-size: 1.5rem;
 }
 
@@ -19,8 +20,9 @@
 }
 
 .sidebar {
-  background-color: #f4f4f4;
-  width: 200px;
+  background-color: darkgoldenrod;
+  width: 1500px;
+
 }
 
 .sidebar ul {
