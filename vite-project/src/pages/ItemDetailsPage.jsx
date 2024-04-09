@@ -1,24 +1,31 @@
 import List from "../components/List";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import classes from "../components/styling/List.module.css";
+import { useEffect, useState } from "react";
 
 
 function ItemDetailsPage(props) {
+  const {recipeId} = useParams()
+  const [recipe, setRecipe] = useState(undefined);
+
+  useEffect(() => {
+    const foundRecipe = props.data.find((recipe) => recipe.id === recipeId)
+    setRecipe(foundRecipe)
+
+  },[recipeId])
  
   return (
     <div>
       <h1>Details</h1>
-      {props.data.map((List) => {
-        return (
-          <Link key={List.id} className="List" to = {`/item/${List.id}`}>
-            <img src={List.image} className={classes.img}/>
-            <h3>{List.name}</h3>
-            <p>{List.calories}</p>
-            <p>{List.servings}</p>
+     {recipe && <Link key={recipe.id} className="List" to = {`/item/${recipe.id}`}>
+            <img src={recipe.image} className={classes.img}/>
+            <h3>{recipe.name}</h3>
+            <p>{recipe.calories}</p>
+            <p>{recipe.servings}</p>
             
-          </Link>
-        );
-      })}
+          </Link> }
+          
+      
     </div>
   );
 }

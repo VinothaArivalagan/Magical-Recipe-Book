@@ -1,33 +1,21 @@
-.navbar {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.navbar-logo {
-  background-image: url(./);
-  font-size: 1.5rem;
-}
-
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 1rem;
+  padding-left: 300px;
   text-align: center;
 }
 
 .sidebar {
+  
   background-color: darkgoldenrod;
-  width: 1500px;
+  width: 150px;
 
 }
 
 .sidebar ul {
   list-style-type: none;
-  padding: 0;
+
+  
 }
 
 .sidebar ul li {
@@ -38,3 +26,4 @@
   text-decoration: none;
   color: #333;
 }
+

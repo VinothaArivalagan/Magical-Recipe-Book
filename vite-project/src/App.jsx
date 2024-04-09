@@ -11,20 +11,36 @@ import ItemDetailsPage from './pages/ItemDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css'; 
 import { useState } from 'react';
+import FirstPage from './components/FirstPage';
+
 
 function App() {
   const [recipes,  setRecipes] = useState(data);
+  function handleNewRecipe (recipe) {
+
+setRecipes(prevRecipes => [...prevRecipes, recipe])
+  }
+
+  const handleDelete = recipeId => {
+    console.log(recipeId)
+    const copy = JSON.parse(JSON.stringify(recipes))
+    const filtered = copy.filter(recipe => recipe.id !== recipeId)
+    setRecipes(filtered)
+}
   return (
     <Router>
       <div className="app">
+        <FirstPage />
         <Navbar />
-        <Sidebar />
+        
         <div className="content">
+        <Sidebar />
           <Routes>
-            <Route exact path="/" element={<Home />} />
+          <Route path="/" element={< FirstPage/>} />
+            <Route exact path="/recipes" element={<Home data={recipes} handleDelete={handleDelete} />} />
             <Route path="/about" element={<About/>} />
-            <Route exact path="/dashboard" element={<DashboardPage data ={recipes}/>} />
-            <Route path="/itemdetails" element={<ItemDetailsPage data = {recipes}/>} />
+            <Route exact path="/dashboard" element={<DashboardPage handleNewRecipe={handleNewRecipe} data ={recipes}/>} />
+            <Route path="/item/:recipeId" element={<ItemDetailsPage data = {recipes}/>} />
             <Route path="*" element={<NotFoundPage/>} />
           </Routes>
         </div>
