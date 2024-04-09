@@ -1,29 +1,30 @@
 .footer {
-  background-color: #333;
+  background-color: #d29722;
   color: #fff;
-  padding-left: 300px;
+  padding-left: 150px;
   text-align: center;
+
 }
 
 .sidebar {
-  
   background-color: darkgoldenrod;
-  width: 150px;
+  width: 1550px;
 
 }
 
 .sidebar ul {
   list-style-type: none;
+  padding-left: 150px;
 
   
 }
 
-.sidebar ul li {
-  padding: 0.5rem;
-}
 
 .sidebar ul li a {
   text-decoration: none;
   color: #333;
+  padding-left: 100px;
+
+
 }
 

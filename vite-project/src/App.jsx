@@ -31,10 +31,11 @@ setRecipes(prevRecipes => [...prevRecipes, recipe])
     <Router>
       <div className="app">
         <FirstPage />
+        <Sidebar />
+
         <Navbar />
         
         <div className="content">
-        <Sidebar />
           <Routes>
           <Route path="/" element={< FirstPage/>} />
             <Route exact path="/recipes" element={<Home data={recipes} handleDelete={handleDelete} />} />
