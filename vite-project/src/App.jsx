@@ -11,7 +11,6 @@ import ItemDetailsPage from './pages/ItemDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css'; 
 import { useState } from 'react';
-import FirstPage from './components/FirstPage';
 
 
 function App() {
@@ -30,15 +29,14 @@ setRecipes(prevRecipes => [...prevRecipes, recipe])
   return (
     <Router>
       <div className="app">
-        <FirstPage />
         <Sidebar />
 
         <Navbar />
         
         <div className="content">
           <Routes>
-          <Route path="/" element={< FirstPage/>} />
-            <Route exact path="/recipes" element={<Home data={recipes} handleDelete={handleDelete} />} />
+            
+            <Route exact path="/" element={<Home data={recipes} handleDelete={handleDelete} />} />
             <Route path="/about" element={<About/>} />
             <Route exact path="/dashboard" element={<DashboardPage handleNewRecipe={handleNewRecipe} data ={recipes}/>} />
             <Route path="/item/:recipeId" element={<ItemDetailsPage data = {recipes}/>} />

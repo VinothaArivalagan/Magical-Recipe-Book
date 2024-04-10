@@ -1,4 +1,3 @@
-import List from "../components/List";
 import { Link, useParams } from "react-router-dom";
 import classes from "../components/styling/List.module.css";
 import { useEffect, useState } from "react";
